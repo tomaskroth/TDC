@@ -30,7 +30,7 @@ public class ChatCommandLine implements CommandLineRunner {
         sendGreeting(room, author);
         subscribeToChat(room);
 
-        while (true) {
+        while (scanner.hasNextLine()) {
             String content = scanner.nextLine();
 
             Message message = new Message();

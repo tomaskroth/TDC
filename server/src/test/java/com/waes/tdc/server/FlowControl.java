@@ -11,7 +11,7 @@ public class FlowControl {
     @Test
     public void first() {
         Mono<String> a = Mono.just("oops I'm late")
-                             .delayElement(Duration.ofMillis(350));
+                             .delayElement(Duration.ofMillis(450));
         Flux<String> b = Flux.just("let's get", "the party", "started")
                              .delayElements(Duration.ofMillis(400));
 
@@ -23,7 +23,7 @@ public class FlowControl {
     @Test
     public void understandingBackPressure() {
 
-        Flux<Integer> lotsOfData = Flux.range(1, Integer.MAX_VALUE)
+        Flux<Integer> lotsOfData = Flux.range(1, 200)
                                        .limitRate(5);
 //        Flux<Integer> lotsOfData = Flux.range(1, Integer.MAX_VALUE).limitRate(5, 3);
 //        Flux<Integer> lotsOfData = Flux.range(1, Integer.MAX_VALUE).limitRequest(5);
@@ -32,7 +32,7 @@ public class FlowControl {
                 .subscribe(x -> {
                     System.out.println(x);
                     try {
-                        Thread.sleep(200);
+                        Thread.sleep(50);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

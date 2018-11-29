@@ -18,7 +18,7 @@ import java.util.Date;
 public class ChatServiceImpl implements ChatService {
 
     private final MessageRepository messageRepository;
-//    private final ReactiveMongoTemplate reactiveMongoTemplate;
+    private final ReactiveMongoTemplate reactiveMongoTemplate;
 
     @PostConstruct
     public void init() {
