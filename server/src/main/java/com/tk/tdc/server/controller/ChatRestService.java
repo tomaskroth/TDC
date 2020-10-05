@@ -1,7 +1,7 @@
-package com.waes.tdc.server.controller;
+package com.tk.tdc.server.controller;
 
-import com.waes.tdc.server.domain.Message;
-import com.waes.tdc.server.service.ChatService;
+import com.tk.tdc.server.domain.Message;
+import com.tk.tdc.server.service.ChatService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

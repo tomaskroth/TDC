@@ -1,4 +1,4 @@
-package com.waes.tdc.client.domain;
+package com.tk.tdc.client.domain;
 
 import lombok.Data;
 

@@ -1,8 +1,8 @@
-package com.waes.tdc.server.service.impl;
+package com.tk.tdc.server.service.impl;
 
-import com.waes.tdc.server.domain.Message;
-import com.waes.tdc.server.repository.MessageRepository;
-import com.waes.tdc.server.service.ChatService;
+import com.tk.tdc.server.domain.Message;
+import com.tk.tdc.server.repository.MessageRepository;
+import com.tk.tdc.server.service.ChatService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.mongodb.core.CollectionOptions;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;

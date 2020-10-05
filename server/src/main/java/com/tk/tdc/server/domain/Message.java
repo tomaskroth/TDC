@@ -1,4 +1,4 @@
-package com.waes.tdc.server.domain;
+package com.tk.tdc.server.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

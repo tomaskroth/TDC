@@ -1,4 +1,4 @@
-package com.waes.tdc.server;
+package com.tk.tdc.server;
 
 import org.junit.Test;
 import reactor.core.publisher.Flux;
@@ -12,7 +12,7 @@ public class FluxExplanation {
             "the",
             "quick",
             "brown",
-            "fox",
+            "foxes",
             "jumped",
             "over",
             "the",
@@ -32,30 +32,30 @@ public class FluxExplanation {
 
     @Test
     public void streamLetterByLetter() {
-        Flux<String> manyWords = Flux.fromIterable(words)
-                                     .flatMap(word -> Flux.fromArray(word.split("")))
-                                     .distinct()
-                                     .sort()
-                                     .zipWith(
-                                             Flux.range(1, Integer.MAX_VALUE),
-                                             (string, count) -> String.format("%2d. %s", count, string)
-                                     );
+        Flux<String> manyLetters = Flux.fromIterable(words)
+                .flatMap(word -> Flux.fromArray(word.split("")))
+                .distinct()
+                .sort()
+                .zipWith(
+                        Flux.range(1, Integer.MAX_VALUE),
+                        (string, count) -> String.format("%2d. %s", count, string)
+                );
 
 
-        manyWords.subscribe(System.out::println);
+        manyLetters.subscribe(System.out::println);
 
     }
 
     @Test
     public void streamLetterByLetter2() {
         Flux<String> manyWords = Flux.just(1, 2, 3, 4)
-                                     .zipWith(
-                                             Flux.fromIterable(words)
-                                                 .flatMap(word -> Flux.fromArray(word.split("")))
-                                                 .distinct()
-                                                 .sort(),
-                                             (count, string) -> String.format("%2d. %s", count, string)
-                                     );
+                .zipWith(
+                        Flux.fromIterable(words)
+                                .flatMap(word -> Flux.fromArray(word.split("")))
+                                .distinct()
+                                .sort(),
+                        (count, string) -> String.format("%2d. %s", count, string)
+                );
 
 
         manyWords.subscribe(System.out::println);

@@ -1,6 +1,6 @@
-package com.waes.tdc.server.repository;
+package com.tk.tdc.server.repository;
 
-import com.waes.tdc.server.domain.Message;
+import com.tk.tdc.server.domain.Message;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.data.mongodb.repository.Tailable;
 import reactor.core.publisher.Flux;

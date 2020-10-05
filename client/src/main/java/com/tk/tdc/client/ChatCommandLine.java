@@ -1,6 +1,6 @@
-package com.waes.tdc.client;
+package com.tk.tdc.client;
 
-import com.waes.tdc.client.domain.Message;
+import com.tk.tdc.client.domain.Message;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -55,9 +55,7 @@ public class ChatCommandLine implements CommandLineRunner {
     private void subscribeToChat(String room) {
         Flux<Message> chatMessages = getChatMessages(room);
         chatMessages.subscribe(message ->
-                System.out.println(
-                    String.format(MESSAGE, message.getAuthor(), message.getTime(), message.getContent())
-                )
+                System.out.printf((MESSAGE) + "%n", message.getAuthor(), message.getTime(), message.getContent())
         );
     }
 
@@ -66,7 +64,7 @@ public class ChatCommandLine implements CommandLineRunner {
                  .post()
                  .uri(POST_PATH)
                  .contentType(MediaType.APPLICATION_JSON)
-                 .syncBody(message)
+                 .bodyValue(message)
                  .retrieve()
                  .bodyToMono(Message.class)
                  .doOnError(error ->

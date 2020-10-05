@@ -1,6 +1,6 @@
-package com.waes.tdc.server.service;
+package com.tk.tdc.server.service;
 
-import com.waes.tdc.server.domain.Message;
+import com.tk.tdc.server.domain.Message;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.1.0.RELEASE'
+		springBootVersion = '2.3.4.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -15,22 +15,25 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.waes.tdc'
+group = 'com.tk.tdc'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.10
+sourceCompatibility = 1.11
 
 repositories {
 	mavenCentral()
+}
+ext {
+	lombokVersion = '1.18.12'
 }
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-webflux')
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
-	annotationProcessor("org.projectlombok:lombok:1.18.2")
-	compileOnly("org.projectlombok:lombok:1.18.2")
+	annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+	compileOnly("org.projectlombok:lombok:$lombokVersion")
 	testImplementation('io.projectreactor:reactor-test')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	compileOnly('org.projectlombok:lombok:1.18.2')
+	compileOnly("org.projectlombok:lombok:$lombokVersion")
 }
 
 

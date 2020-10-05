@@ -1,4 +1,4 @@
-package com.waes.tdc.client;
+package com.tk.tdc.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
